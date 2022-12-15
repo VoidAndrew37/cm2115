@@ -1,9 +1,11 @@
 package uk.ac.rgu.cm2115;
 
+import java.io.IOException;
 // Imports
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -56,23 +58,23 @@ public class ElectricScooterController extends VehicleController implements Stat
     }
     
 // Code sourced/ adapted from https://www.youtube.com/watch?v=wxhGKR3PQpo
-    // private Parent root;
+    private Parent root;
 
-    // // Implements Save Button
-    // public void  saveButton(ActionEvent event) throws IOException {
-    //     String vehicleTypes = mountainBikeLabel.getText();
+    // Implements Save Button
+    public void  saveButton(ActionEvent event) throws IOException {
+        String vehicleTypes = electricScooterLabel.getText();
 
-    //     // Changes to VehicleManager Screen
-    //     FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
-    //     root = loader.load();
+        // Changes to VehicleManager Screen
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
+        root = loader.load();
 
-    //     VehicleManager vehicleManager = loader.getController();
-    //     vehicleManager.vehicleTypesList(vehicleTypes);
+        VehicleManager vehicleManager = loader.getController();
+        vehicleManager.vehicleTypesList(vehicleTypes);
 
-    //     stage = (Stage)((Node)event.getSource()).getScene.getWindow();
-    //     scene = new Scene(root);
-    //     stage.setScene(scene);
-    // }
+        // stage = (Stage)((Node)event.getSource()).getScene.getWindow();
+        // scene = new Scene(root);
+        // stage.setScene(scene);
+    }
 // End of Code Sourced/ adapted
 
 

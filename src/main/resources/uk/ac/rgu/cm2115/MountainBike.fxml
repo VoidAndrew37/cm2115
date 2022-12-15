@@ -8,10 +8,10 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rgu.cm2115.MountainBikeController">
    <children>
-      <Label fx:id="mountainBikeLabel" layoutX="247.0" layoutY="29.0" text="Mountain Bike " />
+      <Label fx:id="mountainBikeLabel" layoutX="239.0" layoutY="27.0" text="Mountain Bike " />
       <TextField layoutX="204.0" layoutY="112.0" />
       <Label alignment="CENTER" layoutX="203.0" layoutY="87.0" prefHeight="17.0" prefWidth="150.0" text="Rental Price" />
-      <Button fx:id="saveButton" layoutX="307.0" layoutY="335.0" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+      <Button fx:id="saveButton" layoutX="307.0" layoutY="335.0" mnemonicParsing="false" onAction="#save" text="Save" />
       <Button fx:id="returnHomeButton" layoutX="203.0" layoutY="335.0" mnemonicParsing="false" onAction="#handleReturnHomeButton" text="Cancel" />
       <ChoiceBox fx:id="choiceFrameSize" layoutX="203.0" layoutY="163.0" prefWidth="150.0" />
       <ChoiceBox fx:id="choiceBrakeType" layoutX="203.0" layoutY="272.0" prefWidth="150.0" />
@@ -19,5 +19,6 @@
       <Label alignment="CENTER" layoutX="241.0" layoutY="146.0" prefHeight="17.0" prefWidth="75.0" text="Frame Size" />
       <Label alignment="CENTER" layoutX="231.0" layoutY="201.0" prefHeight="17.0" prefWidth="94.0" text="Suspension Type" />
       <Label layoutX="246.0" layoutY="255.0" prefHeight="17.0" prefWidth="65.0" text="Brake Type" />
+      <TextField fx:id="mountainBikeName" layoutX="205.0" layoutY="62.0" />
    </children>
 </AnchorPane>

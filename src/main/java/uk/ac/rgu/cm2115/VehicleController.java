@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 // Extends LaunchController to develop the hierarchy
 public class VehicleController extends LaunchController {
     
+    // Adds the parts to the VehicleController Page
     @FXML
     Button electricBikeButton, mountainBikeButton, electricScooterButton;
 

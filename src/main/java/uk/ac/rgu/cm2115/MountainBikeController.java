@@ -1,10 +1,7 @@
 package uk.ac.rgu.cm2115;
 
-// Imports
-import java.io.IOError;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.channels.AcceptPendingException;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -14,11 +11,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 // Extends VehicleController to develop the hierarchy
 // Implements Bike Interface
-public class MountainBikeController extends VehicleController implements Status, Bike {
+public class MountainBikeController extends VehicleController implements CommandPattern, Status, Bike {
+
     // Adds the parts to the MountainBikeController Page
     private BrakeType brakeType;
     private Suspension suspension;
@@ -27,6 +26,9 @@ public class MountainBikeController extends VehicleController implements Status,
     // Adds Elements from the FXML Files and Scenebuilder
     @FXML
     private Label mountainBikeLabel;
+
+    @FXML
+    TextField mountainBikeName;
 
     // Connects the SceneBuilder Elements to the JavaFX Code
     @FXML
@@ -69,13 +71,15 @@ public class MountainBikeController extends VehicleController implements Status,
 
         Stage window = (Stage) returnHomeButton.getScene().getWindow();
         window.setScene(new Scene(root));
+        
     }
 
 // Code sourced/ adapted from https://www.youtube.com/watch?v=wxhGKR3PQpo
+// Transfers information to the VehicleManager Controller
     private Parent root;
 
-    public void  saveButton(ActionEvent event) throws IOException {
-        String vehicleTypes = mountainBikeLabel.getText();
+    public void  save(ActionEvent event) throws IOException {
+        String vehicleTypes = mountainBikeName.getText();
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
         root = loader.load();
@@ -113,6 +117,11 @@ public class MountainBikeController extends VehicleController implements Status,
     @Override
     public void save() {
         System.out.println("Vehicle Saved");        
+        
+    }
+    
+    @Override
+    public void execute() {
         
     }
     

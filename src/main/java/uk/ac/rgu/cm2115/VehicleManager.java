@@ -17,11 +17,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 // Implements Initializable
 public class VehicleManager implements Initializable {
 
+    // Adds the parts to the VehicleManager Page
     @FXML
     Button returnHomeButton;
 
@@ -34,6 +36,10 @@ public class VehicleManager implements Initializable {
     @FXML 
     private TextArea vehicleInfoTextArea;
 
+    @FXML 
+    private TextField mountainBikeName;
+
+    // Handles the actions when a vehicle option is selected
     @FXML
     private void handleButtonAction(ActionEvent event) {
         vehicleInfoTextArea.appendText(vehicleChoice.getSelectionModel().getSelectedItem() + "\n");
@@ -45,7 +51,8 @@ public class VehicleManager implements Initializable {
     Label mountainBikeLabel;
 
     public void vehicleTypesList(String vehicleTypes) {
-        mountainBikeLabel.setText(vehicleTypes);
+        String[] vehicleChoice = {""};
+        System.out.println(vehicleChoice);
     }
 
     String currentVehicles;
@@ -64,7 +71,7 @@ public class VehicleManager implements Initializable {
 
 
         // Observer Design Pattern
-        // vehicleChoice.getItems().addAll(VehicleTypes);
+        // vehicleChoice.getItems().addAll(vehicleChoice);
 
         vehicleChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 

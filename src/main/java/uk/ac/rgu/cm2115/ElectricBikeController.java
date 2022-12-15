@@ -68,7 +68,7 @@ public class ElectricBikeController extends VehicleController implements Status,
 
     }
 
-    // Changes back to the LaunchScreen Scene
+    // Changes back to the LaunchScreen Scene - Adapted from https://www.youtube.com/watch?v=hcM-R-YOKkQ
     public void handleReturnHome() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("LaunchScreen.fxml"));
 
@@ -81,20 +81,18 @@ public class ElectricBikeController extends VehicleController implements Status,
     private Parent root;
 
     // Implements the Save Button
-    // public void  saveButton(ActionEvent event) throws IOException {
-    //     String vehicleTypes = mountainBikeLabel.getText();
+    public void  saveButton(ActionEvent event) throws IOException {
+        String vehicleTypes = electricBikeLabel.getText();
 
-    //     // Changes to VehicleManager Scene
-    //     FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
-    //     root = loader.load();
+        // Changes to VehicleManager Scene
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
+        root = loader.load();
 
-    //     VehicleManager vehicleManager = loader.getController();
-    //     vehicleManager.vehicleTypesList(vehicleTypes);
+        VehicleManager vehicleManager = loader.getController();
+        vehicleManager.vehicleTypesList(vehicleTypes);
 
-    //     stage = (Stage)((Node)event.getSource()).getScene.getWindow();
-    //     scene = new Scene(root);
-    //     stage.setScene(scene);
-    //}
+
+    }
 // End of Code Sourced/ adapted
 
     // Getters for the Parts

@@ -25,13 +25,19 @@ public class App extends Application {
 
     public static void main(String[] args) throws IOException {
         launch();
-        // Command Design Pattern
+
+
+        // Command Design Pattern - Adapted from https://www.youtube.com/watch?v=7Pj5kAhVBlg
         Status newStatus = Controls.getStatus();
 
+        // Save Status
         Save onSave = new Save(newStatus);
-
         StatusButtons onClick = new StatusButtons(onSave);
+        onClick.press();
 
+        // Cancel Status
+        Cancel onCancel = new Cancel(newStatus);
+        onClick = new StatusButtons(onCancel);
         onClick.press();
 
 
