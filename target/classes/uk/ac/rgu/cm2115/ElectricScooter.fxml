@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rgu.cm2115.ElectricScooterController">
+   <children>
+      <Label fx:id="electricScooterLabel" alignment="CENTER" layoutX="240.0" layoutY="50.0" prefHeight="17.0" prefWidth="120.0" text="Electric Scooter " />
+      <Label alignment="CENTER" layoutX="226.0" layoutY="89.0" prefHeight="17.0" prefWidth="150.0" text="Rental Price" />
+      <TextField layoutX="226.0" layoutY="106.0" />
+      <ChoiceBox fx:id="rideModeChoice" layoutX="226.0" layoutY="166.0" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="226.0" layoutY="149.0" prefHeight="17.0" prefWidth="150.0" text="Ride Modes" />
+      <Button fx:id="returnHomeButton" layoutX="240.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleReturnHome" text="Cancel" />
+      <Button layoutX="340.0" layoutY="351.0" mnemonicParsing="false" text="Save" />
+      <ChoiceBox fx:id="batteryTypeChoice" layoutX="226.0" layoutY="226.0" prefWidth="150.0" />
+      <Label alignment="CENTER" layoutX="250.0" layoutY="209.0" prefHeight="17.0" prefWidth="102.0" text="Battery Type" />
+   </children>
+</AnchorPane>

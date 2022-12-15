@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="uk.ac.rgu.cm2115.LaunchController">
+   <children>
+      <Button fx:id="vehicleAddButton" layoutX="237.0" layoutY="237.0" mnemonicParsing="false" onAction="#handleVehicleAddButton" prefHeight="76.0" prefWidth="140.0" text="Add Vehicle" />
+      <Button fx:id="vehicleManagerButton" layoutX="237.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleVehicleManagerButton" prefHeight="76.0" prefWidth="140.0" text="Vehicle Manager" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="237.0" layoutY="21.0" prefHeight="21.0" prefWidth="148.0" text="AberGreen Vehicles" />
+   </children>
+</AnchorPane>
