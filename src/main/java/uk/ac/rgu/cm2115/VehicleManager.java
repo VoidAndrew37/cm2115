@@ -28,7 +28,7 @@ public class VehicleManager implements Initializable {
     Button returnHomeButton;
 
     @FXML
-    private ListView<String> vehicleChoice;
+    private ListView<String> vehicleChoice, vehicleInfo;
 
     @FXML
     private Label vehicleList;
@@ -50,6 +50,7 @@ public class VehicleManager implements Initializable {
     @FXML
     Label mountainBikeLabel;
 
+    // writes to the array from the other Controllers
     public void vehicleTypesList(String vehicleTypes) {
         String[] vehicleChoice = {""};
         System.out.println(vehicleChoice);
@@ -72,7 +73,7 @@ public class VehicleManager implements Initializable {
 
         // Observer Design Pattern
         // vehicleChoice.getItems().addAll(vehicleChoice);
-
+        // Adds information to the ListView
         vehicleChoice.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 
             @Override
@@ -86,14 +87,12 @@ public class VehicleManager implements Initializable {
         
     }
 
+    // Changes back to the LaunchScreen Scene
     public void handleReturnHomeButton() throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("LaunchScreen.fxml"));
 
         Stage window = (Stage) returnHomeButton.getScene().getWindow();
         window.setScene(new Scene(root));
     }
-
-
-
 
 }

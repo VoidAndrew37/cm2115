@@ -18,6 +18,6 @@
       <Button fx:id="selectVehicleButton" layoutX="33.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="200.0" text="Select Vehicle" />
       <Label alignment="CENTER" layoutX="364.0" layoutY="105.0" prefHeight="17.0" prefWidth="200.0" text="Vehicle Information" />
       <ListView fx:id="vehicleChoice" layoutX="37.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
-      <ListView layoutX="364.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
+      <ListView fx:id="vehicleInfo" layoutX="364.0" layoutY="122.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
