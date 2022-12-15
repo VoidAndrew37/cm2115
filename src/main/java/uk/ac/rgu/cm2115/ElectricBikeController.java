@@ -12,11 +12,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 // Extends VehicleController to develop the hierarchy
 // Implements Bike and ElectricVehicle Interfaces
-public class ElectricBikeController extends VehicleController implements Bike, ElectricVehicle{
+public class ElectricBikeController extends VehicleController implements Status, Bike, ElectricVehicle{
 
 
     // Adds the parts to the ElectricBikeController Page
@@ -80,20 +81,20 @@ public class ElectricBikeController extends VehicleController implements Bike, E
     private Parent root;
 
     // Implements the Save Button
-    public void  saveButton(ActionEvent event) throws IOException {
-        String vehicleTypes = mountainBikeLabel.getText();
+    // public void  saveButton(ActionEvent event) throws IOException {
+    //     String vehicleTypes = mountainBikeLabel.getText();
 
-        // Changes to VehicleManager Scene
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
-        root = loader.load();
+    //     // Changes to VehicleManager Scene
+    //     FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
+    //     root = loader.load();
 
-        VehicleManager vehicleManager = loader.getController();
-        vehicleManager.vehicleTypesList(vehicleTypes);
+    //     VehicleManager vehicleManager = loader.getController();
+    //     vehicleManager.vehicleTypesList(vehicleTypes);
 
-        stage = (Stage)((Node)event.getSource()).getScene.getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-    }
+    //     stage = (Stage)((Node)event.getSource()).getScene.getWindow();
+    //     scene = new Scene(root);
+    //     stage.setScene(scene);
+    //}
 // End of Code Sourced/ adapted
 
     // Getters for the Parts
@@ -119,6 +120,17 @@ public class ElectricBikeController extends VehicleController implements Bike, E
 
     public String[] getPedalAssistThreshold() {
         return this.pedalAssistThreshold;
+    }
+
+    @Override
+    public void cancel() {
+        System.out.println("You have cancelled and been returned to the home page");        
+    }
+
+    @Override
+    public void save() {
+        System.out.println("Vehicle Saved");        
+        
     }
 
 }

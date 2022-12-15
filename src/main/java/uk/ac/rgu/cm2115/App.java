@@ -7,12 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 
 
 public class App extends Application {
@@ -28,14 +25,24 @@ public class App extends Application {
 
     public static void main(String[] args) throws IOException {
         launch();
+        // Command Design Pattern
+        Status newStatus = Controls.getStatus();
 
+        Save onSave = new Save(newStatus);
+
+        StatusButtons onClick = new StatusButtons(onSave);
+
+        onClick.press();
+
+
+        // Creates CSV File
         // Creates File object
         File csvFile = new File("Vehicles.csv");
         // Creates FileWriter Object 
         FileWriter fw = new FileWriter(csvFile);
         try (// Creates Print Writer Object
         PrintWriter pw = new PrintWriter(csvFile)) {
-            pw.println();
+            pw.println("MountainBike");
 
             pw.close();
         }

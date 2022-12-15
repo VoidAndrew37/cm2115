@@ -9,11 +9,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 // Extends VehicleController to develop the hierarchy
 // Implements ElectricVehicle Interface
-public class ElectricScooterController extends VehicleController implements ElectricVehicle{
+public class ElectricScooterController extends VehicleController implements Status, ElectricVehicle{
 
     private BatteryType batteryType;
 
@@ -55,23 +56,23 @@ public class ElectricScooterController extends VehicleController implements Elec
     }
     
 // Code sourced/ adapted from https://www.youtube.com/watch?v=wxhGKR3PQpo
-    private Parent root;
+    // private Parent root;
 
-    // Implements Save Button
-    public void  saveButton(ActionEvent event) throws IOException {
-        String vehicleTypes = mountainBikeLabel.getText();
+    // // Implements Save Button
+    // public void  saveButton(ActionEvent event) throws IOException {
+    //     String vehicleTypes = mountainBikeLabel.getText();
 
-        // Changes to VehicleManager Screen
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
-        root = loader.load();
+    //     // Changes to VehicleManager Screen
+    //     FXMLLoader loader = new FXMLLoader(getClass().getResource("VehicleManager.fxml"));
+    //     root = loader.load();
 
-        VehicleManager vehicleManager = loader.getController();
-        vehicleManager.vehicleTypesList(vehicleTypes);
+    //     VehicleManager vehicleManager = loader.getController();
+    //     vehicleManager.vehicleTypesList(vehicleTypes);
 
-        stage = (Stage)((Node)event.getSource()).getScene.getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-    }
+    //     stage = (Stage)((Node)event.getSource()).getScene.getWindow();
+    //     scene = new Scene(root);
+    //     stage.setScene(scene);
+    // }
 // End of Code Sourced/ adapted
 
 
@@ -79,5 +80,16 @@ public class ElectricScooterController extends VehicleController implements Elec
     @Override
     public BatteryType getBatteryType() {
         return this.batteryType;
+    }
+
+    @Override
+    public void cancel() {
+        System.out.println("You have cancelled and been returned to the home page");        
+    }
+
+    @Override
+    public void save() {
+        System.out.println("Vehicle Saved");        
+        
     }
 }

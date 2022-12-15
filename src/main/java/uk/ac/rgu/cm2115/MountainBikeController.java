@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 // Extends VehicleController to develop the hierarchy
 // Implements Bike Interface
-public class MountainBikeController extends VehicleController implements Bike {
+public class MountainBikeController extends VehicleController implements Status, Bike {
     // Adds the parts to the MountainBikeController Page
     private BrakeType brakeType;
     private Suspension suspension;
@@ -83,9 +83,9 @@ public class MountainBikeController extends VehicleController implements Bike {
         VehicleManager vehicleManager = loader.getController();
         vehicleManager.vehicleTypesList(vehicleTypes);
 
-        stage = (Stage)((Node)event.getSource()).getScene.getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        // stage = (Stage)((Node)event.getSource()).getScene.getWindow();
+        // scene = new Scene(root);
+        // stage.setScene(scene);
     }
 // End of Code Sourced/ adapted
 
@@ -103,6 +103,17 @@ public class MountainBikeController extends VehicleController implements Bike {
     @Override
     public Suspension getSuspension() {
         return this.suspension;
+    }
+
+    @Override
+    public void cancel() {
+        System.out.println("You have cancelled and been returned to the home page");        
+    }
+
+    @Override
+    public void save() {
+        System.out.println("Vehicle Saved");        
+        
     }
     
 }
